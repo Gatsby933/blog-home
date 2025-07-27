@@ -44,7 +44,16 @@ body.addEventListener('mousemove', (e) => {
 
 //加载完成后执行
 window.addEventListener('load', function () {
-
+  // 重置容器高度
+    const container = document.getElementById('container');
+    container.style.minHeight = window.innerHeight + 'px';
+  
+  // 重排元素
+    setTimeout(() => {
+        document.querySelectorAll('.cards').forEach(card => {
+         card.style.display = 'block';
+    });
+  }, 100);
     //载入动画
     $('#loading-box').attr('class', 'loaded');
     $('#bg').css("cssText", "transform: scale(1);filter: blur(0px);transition: ease 1.5s;");

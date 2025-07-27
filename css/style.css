@@ -133,35 +133,34 @@ img.error {
 /*页面样式*/
 section {
     display: block;
-    position: fixed;
+    position: relative;
     width: 100%;
-    height: 100%;
-    min-height: 600px;
-    transform: scale(1.10);
+    min-height: 100vh;
     transition: ease 1.25s;
     opacity: 0;
     filter: blur(10px);
+    overflow-x: hidden;
 }
 
 main {
     width: 100%;
-    height: 100%;
-    /*background: rgb(0 0 0 / 20%);*/
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 1rem;
+    min-height: 100vh;
     display: flex;
-    /*align-items: center;*/
+    flex-direction: column;
 }
 
 .container {
     width: 100%;
-    display: flex;
-    justify-content: space-around;
+    /* 不要加 display:flex; 保持 Bootstrap 默认 */
 }
 
 .row {
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    /* 保持 Bootstrap 默认 row 行为 */
     --bs-gutter-x: 0 !important;
+    /* 不要加 align-items/justify-content/width/flex */
 }
 
 .col.\32  {
@@ -171,7 +170,9 @@ main {
 .main-left {
     /*transform: translateY(240px);*/
     transform: translateY(40px);
+    /* 只做内容样式，不做布局 */
 }
+    /* 只做内容样式，不做布局 */
 
 .row.rightone {
     display: flex;
